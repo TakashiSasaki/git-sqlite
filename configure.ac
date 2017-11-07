@@ -16,5 +16,6 @@ AM_INIT_AUTOMAKE
 # Checks for library functions.
 
 AC_CONFIG_FILES([Makefile
-                 scripts/Makefile])
+                 scripts/Makefile
+                 test/Makefile])
 AC_OUTPUT

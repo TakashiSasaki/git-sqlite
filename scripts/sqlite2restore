@@ -1,7 +1,12 @@
 #!/bin/sh
 set -eu
-cat >temptemp.sql
-sqlite temptemp.sqlite2 ".read temptemp.sql"
-cat temptemp.sqlite2
-rm temptemp.sql temptemp.sqlite2
+tmpsql=$(mktemp)
+tmpdb=$(mktemp)
+
+trap "test -f $tmpdb && rm -f $tmpdb $tmpsql" EXIT
+trap "test -f $tmpdb && rm -f $tmpdb $tmpsql; exit -1" INT TERM KILL
+
+cat >$tmpsql
+sqlite $tmpdb ".read $tmpsql"
+cat $tmpdb
 

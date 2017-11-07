@@ -1,6 +1,10 @@
 #!/bin/sh
 set -eu
-cat > dumptemp.sqlite3
-sqlite3 dumptemp.sqlite3 .dump
-rm dumptemp.sqlite3
+tmpdb=$(mktemp)
+
+trap "test -f $tmpdb && rm -f $tmpdb" EXIT
+trap "test -f $tmpdb && rm -f $tmpdb; exit -1" INT TERM KILL
+
+cat > $tmpdb
+sqlite3 $tmpdb .dump
 
