@@ -4,6 +4,7 @@
 AC_PREREQ([2.69])
 AC_INIT([git-sqlite], [0.0.1], [takashi316+git-sqlite@gmail.com])
 AM_INIT_AUTOMAKE
+
 # Checks for programs.
 
 # Checks for libraries.
@@ -14,5 +15,6 @@ AM_INIT_AUTOMAKE
 
 # Checks for library functions.
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile
+                 scripts/Makefile])
 AC_OUTPUT
