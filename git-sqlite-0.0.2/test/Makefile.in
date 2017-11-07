@@ -394,6 +394,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 TESTS = tests.sh
+EXTRA_DIST = tests.sh test.sqlite2.dump test.sqlite3.dump
 all: all-am
 
 .SUFFIXES:
