@@ -1,0 +1,11 @@
+#!/bin/sh
+set -eu
+tmpdb=$(mktemp)
+
+trap "test -f $tmpdb && rm -f $tmpdb" EXIT
+trap "test -f $tmpdb && rm -f $tmpdb; exit -1" INT TERM KILL
+
+cat > $tmpdb
+sqlite $tmpdb .dump
+
+

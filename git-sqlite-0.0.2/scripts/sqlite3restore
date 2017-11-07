@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+tmpsql=$(mktemp)
+tmpdb=$(mktemp)
+
+trap "test -f $tmpsql && rm -f $tmpsql $tmpdb" EXIT
+trap "test -f $tmpsql && rm -f $tmpsql $tmpdb; exit -1" INT TERM KILL
+
+cat >$tmpsql
+sqlite3 $tmpdb ".read $tmpsql"
+cat $tmpdb
+
+
