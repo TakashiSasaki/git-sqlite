@@ -1,6 +1,6 @@
-bin_PROGRAMS = sqlite2-restore sqlite2-dump sqlite3-restore sqlite3-dump
-sqlite2-restore_SOURCES = sqlite2-restore.sh
-sqlite2-dump_SOURCES = sqlite2-dump.sh
-sqlite3-restore_SOURCEES = sqlite3-restore.sh
-sqlite3-dump_SOURCES = sqlite3-dump.sh
+bin_PROGRAMS = sqlite2restore sqlite2dump sqlite3restore sqlite3dump
+sqlite2restore_SOURCES = sqlite2restore.sh
+sqlite2dump_SOURCES = sqlite2dump.sh
+sqlite3restore_SOURCES = sqlite3restore.sh
+sqlite3dump_SOURCES = sqlite3dump.sh
 
