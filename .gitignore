@@ -2,6 +2,11 @@ autoscan.log
 configure.scan
 autom4te.cache
 aclocal.m4
-sqlite2restore
 Makefile.in
 missing
+config.loc
+configure
+install-sh
+Makefile
+config.log
+config.status
