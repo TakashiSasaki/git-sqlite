@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([git-sqlite], [0.0.1], [takashi316+git-sqlite@gmail.com])
-
+AM_INIT_AUTOMAKE
 # Checks for programs.
 
 # Checks for libraries.
