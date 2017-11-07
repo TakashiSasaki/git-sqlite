@@ -1,0 +1,5 @@
+BEGIN TRANSACTION;
+create table test(id);
+INSERT INTO test VALUES('abcdef');
+INSERT INTO test VALUES(123456);
+COMMIT;
