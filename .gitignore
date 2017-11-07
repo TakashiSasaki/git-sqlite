@@ -10,8 +10,6 @@ install-sh
 Makefile
 config.log
 config.status
-test/test.sqlite2
-test/test.sqlite3
 test/test.sqlite2.dump2
 test/test.sqlite3.dump2
 test-driver
@@ -19,3 +17,4 @@ test/test-suite.log
 test/tests.sh.log
 test/tests.sh.trs
 git-sqlite-0.0.1.tar.gz
+git-sqlite-0.0.1
