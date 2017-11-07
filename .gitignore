@@ -23,3 +23,8 @@ scripts/Makefile.in
 git-sqlite-0.0.1.tar.gz
 git-sqlite-0.0.1
 git-sqlite-0.0.2.tar.gz
+git-sqlite-0.0.2/Makefile
+git-sqlite-0.0.2/config.log
+git-sqlite-0.0.2/config.status
+git-sqlite-0.0.2/scripts/Makefile
+git-sqlite-0.0.2/test/Makefile
