@@ -18,3 +18,4 @@ test-driver
 test/test-suite.log
 test/tests.sh.log
 test/tests.sh.trs
+git-sqlite-0.0.1.tar.gz
