@@ -19,7 +19,7 @@ $ sudo cp scripts/sqlite3restore /usr/local/bin/
 
 2.1 Filter settings
 
-Add these filter definition to your .git/config file.
+Add these filter definition to your ~/.gitconfig file or .git/config file.
 
 -----------------------------
 [filter "sqlite2"]
