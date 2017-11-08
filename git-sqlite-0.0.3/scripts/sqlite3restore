@@ -1,12 +1,18 @@
 #!/bin/sh
-set -eu
 tmpsql=$(mktemp)
 tmpdb=$(mktemp)
-
 trap "test -f $tmpsql && rm -f $tmpsql $tmpdb" EXIT
 trap "test -f $tmpsql && rm -f $tmpsql $tmpdb; exit -1" INT TERM KILL
 
 cat >$tmpsql
+set +e
+sqlite3 $tmpsql .tables
+if [ $? -eq 0 ]; then
+  cat $tmpsql
+  exit 0
+fi
+
+set -eu
 sqlite3 $tmpdb ".read $tmpsql"
 cat $tmpdb
 
