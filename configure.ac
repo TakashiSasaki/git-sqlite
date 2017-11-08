@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([git-sqlite], [0.0.2], [takashi316+git-sqlite@gmail.com])
+AC_INIT([git-sqlite], [0.0.3], [takashi316@gmail.com])
 AM_INIT_AUTOMAKE
 
 # Checks for programs.

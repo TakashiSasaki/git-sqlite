@@ -1,12 +1,19 @@
 #!/bin/sh
-set -eu
 tmpsql=$(mktemp)
 tmpdb=$(mktemp)
 
-trap "test -f $tmpdb && rm -f $tmpdb $tmpsql" EXIT
-trap "test -f $tmpdb && rm -f $tmpdb $tmpsql; exit -1" INT TERM KILL
+trap "test -f $tmpsql && rm -f $tmpdb $tmpsql" EXIT
+trap "test -f $tmpsql && rm -f $tmpdb $tmpsql; exit -1" INT TERM KILL
 
 cat >$tmpsql
+set -e
+sqlite $tmpsql .tables
+if [ $? -eq 0 ]; then
+  cat $tmpsql
+  exit 0
+fi
+    
+set -eu
 sqlite $tmpdb ".read $tmpsql"
 cat $tmpdb
 
