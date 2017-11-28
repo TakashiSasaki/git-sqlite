@@ -36,3 +36,4 @@ git-sqlite-0.0.3/scripts/Makefile
 git-sqlite-0.0.3/test/Makefile
 git-sqlite-0.0.3/test/test.sqlite2.dump2
 git-sqlite-0.0.3/test/test.sqlite3.dump2
+git-sqlite-0.0.3/autom4te.cache/
