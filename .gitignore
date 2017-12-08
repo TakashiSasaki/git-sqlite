@@ -40,3 +40,4 @@ git-sqlite-0.0.3/autom4te.cache/
 test/temp.sqlite2
 test/temp.sqlite3
 test/aaa
+config.h.in

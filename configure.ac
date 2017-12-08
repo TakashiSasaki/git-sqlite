@@ -10,6 +10,7 @@ AM_INIT_AUTOMAKE
 # Checks for libraries.
 
 # Checks for header files.
+AC_CONFIG_HEADERS([config.h])
 
 # Checks for typedefs, structures, and compiler characteristics.
 
@@ -19,3 +20,4 @@ AC_CONFIG_FILES([Makefile
                  scripts/Makefile
                  test/Makefile])
 AC_OUTPUT
+
