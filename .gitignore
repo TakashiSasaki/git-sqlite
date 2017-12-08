@@ -50,3 +50,4 @@ git-sqlite-0.1.0/scripts/Makefile
 git-sqlite-0.1.0/test/Makefile
 /config.h.in
 
+git-sqlite-0.1.0/autom4te.cache/

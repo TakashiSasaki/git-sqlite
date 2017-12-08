@@ -1,4 +1,0 @@
-BEGIN TRANSACTION;
-create table test (id);
-INSERT INTO test VALUES(3);
-COMMIT;
