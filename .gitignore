@@ -41,3 +41,11 @@ test/temp.sqlite2
 test/temp.sqlite3
 test/aaa
 config.h.in
+config.h
+stamp-h1
+git-sqlite-0.1.0.tar.gz
+git-sqlite-0.1.0/Makefile
+git-sqlite-0.1.0/config.log
+git-sqlite-0.1.0/config.status
+git-sqlite-0.1.0/scripts/Makefile
+git-sqlite-0.1.0/test/Makefile
