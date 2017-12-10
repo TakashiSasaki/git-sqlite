@@ -1,11 +1,23 @@
 #!/bin/sh
-set -eu
+
+# sqlite2dump
+
+set -u
+
 tmpdb=$(mktemp)
+tmpsql=$(mktemp)
 
-trap "test -f $tmpdb && rm -f $tmpdb" EXIT
-trap "test -f $tmpdb && rm -f $tmpdb; exit -1" INT TERM KILL
+trap "rm -f $tmpdb $tmpsql" EXIT
+trap "rm -f $tmpdb $tmpsql; exit -1" INT TERM KILL
 
-cat > $tmpdb
-sqlite $tmpdb .dump
+cat >$tmpdb
+sqlite $tmpdb .dump >$tmpsql
+if [ $? -eq 0 ]; then
+  cat $tmpsql
+else
+  cat $tmpdb
+fi
 
+  
+  
 

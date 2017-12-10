@@ -1,19 +1,21 @@
 #!/bin/sh
+
+# sqlite2restore
+
+set -u
+
 tmpsql=$(mktemp)
 tmpdb=$(mktemp)
 
-trap "test -f $tmpsql && rm -f $tmpdb $tmpsql" EXIT
-trap "test -f $tmpsql && rm -f $tmpdb $tmpsql; exit -1" INT TERM KILL
+trap "rm -f $tmpdb $tmpsql" EXIT
+trap "rm -f $tmpdb $tmpsql; exit -1" INT TERM KILL
 
 cat >$tmpsql
-#set -e
-#sqlite $tmpsql .tables
-#if [ $? -eq 0 ]; then
-#  cat $tmpsql
-#  exit 0
-#fi
     
-set -eu
-sqlite $tmpdb ".read $tmpsql"
-cat $tmpdb
+sqlite $tmpdb ".read $tmpsql" | grep "SQL error:" >/dev/null
+if [ $? -eq 0 ]; then
+  cat $tmpsql
+else
+  cat $tmpdb
+fi
 

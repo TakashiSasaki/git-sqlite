@@ -1,0 +1,9 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+>>>>>
+CREATE TABLE test(id);
+=====
+INSERT INTO "test" VALUES('abcdef');
+INSERT INTO "test" VALUES(123456);
+<<<<<
+COMMIT;
