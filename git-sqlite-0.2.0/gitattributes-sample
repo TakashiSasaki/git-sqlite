@@ -1,0 +1,7 @@
+# git-sqlite v0.0.1 by Takashi SASAKI https://twitter.com/TakashiSasaki .
+# Add the following lines to .gitattributes file in your repository.
+# Do not forget to edit your .git/config file as well.
+
+*.sqlite2 binary filter=sqlite2
+*.sqlite3 binary filter=sqlite3
+

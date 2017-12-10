@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# sqlite2restore
+
+set -u
+
+tmpsql=$(mktemp)
+tmpdb=$(mktemp)
+
+trap "rm -f $tmpdb $tmpsql" EXIT
+trap "rm -f $tmpdb $tmpsql; exit -1" INT TERM KILL
+
+cat >$tmpsql
+    
+sqlite $tmpdb ".read $tmpsql" | grep "SQL error:" >/dev/null
+if [ $? -eq 0 ]; then
+  cat $tmpsql
+else
+  cat $tmpdb
+fi
+

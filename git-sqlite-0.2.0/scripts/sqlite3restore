@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# sqlite3restore
+
+set -u
+
+tmpsql=$(mktemp)
+tmpdb=$(mktemp)
+
+#trap "rm -f $tmpsql $tmpdb" EXIT
+#trap "rm -f $tmpsql $tmpdb; exit -1" INT TERM KILL
+
+cat >$tmpsql
+sqlite3 $tmpdb ".read $tmpsql" 2>/dev/null
+if [ $? -eq 0 ]; then
+  cat $tmpdb
+else
+  cat $tmpsql
+fi
+
+

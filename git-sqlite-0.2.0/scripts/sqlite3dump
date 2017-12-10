@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# sqlite3dump
+
+set -u
+
+tmpdb=$(mktemp)
+tmpsql=$(mktemp)
+
+trap "rm -f $tmpdb $tmpsql" EXIT
+trap "rm -f $tmpdb $tmpsql; exit -1" INT TERM KILL
+
+cat > $tmpdb
+sqlite3 $tmpdb .dump >$tmpsql
+if [ $? -eq 0 ]; then
+  cat $tmpsql
+else
+  cat $tmpdb
+fi
+
+
+

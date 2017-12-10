@@ -1,0 +1,50 @@
+git-sqlite
+
+1. Installation
+
+1.1 Install by Automake
+
+./configure
+$ make
+$ sudo make install
+
+1.2 Install by hand
+
+$ sudo cp scripts/sqlite2dump /usr/local/bin/
+$ sudo cp scripts/sqlite2restore /usr/local/bin/
+$ sudo cp scripts/sqlite3dump /usr/local/bin/
+$ sudo cp scripts/sqlite3restore /usr/local/bin/
+
+2. Settings in your git repository
+
+2.1 Filter settings
+
+Add these filter definition to your ~/.gitconfig file or .git/config file.
+
+-----------------------------
+[filter "sqlite2"]
+  smudge = sqlite2restore
+  clean = sqlite2dump
+
+[filter "sqlite3"]
+  smudge = sqlite3restore
+  clean = sqlite3dump
+-----------------------------
+
+2.2 Attribute settings
+
+Add the following lines to .gitattributes file in your repository.
+
+---------------------------------------
+*.sqlite2 binary filter=sqlite2
+*.sqlite3 binary filter=sqlite3
+---------------------------------------
+
+3. How to use
+
+*.sqlite2 and *.sqlite3 is automatically dumped and restored when commit and checkout.
+You need not to do anything extra.
+
+$ git add something.sqlite2
+$ git add something.sqlite3
+$ git commit -m "add sample database files"
