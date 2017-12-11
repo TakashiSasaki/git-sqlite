@@ -55,3 +55,9 @@ scripts/test.sqlite3.dump2
 scripts/test.sqlite2.dump2
 test/temp.sqlite2.dump.malformed
 test/temp.sqlite3.dump.malformed
+git-sqlite-0.2.0/Makefile
+git-sqlite-0.2.0/autom4te.cache/
+git-sqlite-0.2.0/config.log
+git-sqlite-0.2.0/config.status
+git-sqlite-0.2.0/scripts/Makefile
+git-sqlite-0.2.0/test/Makefile
